@@ -85,6 +85,7 @@
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid var(--field-stroke);
+        position: relative;
 
         &.error {
           border-bottom: 1px solid var(--error);
@@ -121,6 +122,9 @@
 
         .show-password {
           cursor: pointer;
+          position: absolute;
+          right: 0;
+
           .eye-icon-opened {
             display: none;
           }
