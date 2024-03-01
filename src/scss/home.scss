@@ -1,0 +1,278 @@
+@import "fonts";
+.form-container {
+  flex: 1;
+  padding: 60px 0;
+  .form-content {
+    max-width: 1010px;
+    padding: 0 40px;
+    h1 {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 1.1;
+      color: var(--sec-text);
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      @include adaptiv-font(96, 60);
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+
+      span {
+        color: var(--main-text);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        @include adaptiv-font(96, 60);
+      }
+    }
+    .form-text {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--sec-text);
+      margin-bottom: 50px;
+      @include adaptiv-font(24, 19);
+    }
+    .contact-form {
+      max-width: 560px;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+
+      .error-message {
+        font-family: var(--third-family);
+        font-weight: 400;
+
+        @include adaptiv-font(16, 14);
+        line-height: 160%;
+        color: var(--error);
+      }
+
+      .contact-name,
+      .contact-mail,
+      .contact-phone,
+      select {
+        border: none;
+        border-bottom: 1px solid var(--field-stroke);
+        padding: 12px 20px;
+        max-width: 560px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        @include adaptiv-font(24, 20);
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+
+        color: var(--main-text);
+
+        &::placeholder {
+          font-family: var(--font-family);
+          font-weight: 400;
+          @include adaptiv-font(24, 20);
+          line-height: 1.5;
+          letter-spacing: 0.04em;
+          display: flex;
+          align-items: center;
+
+          color: var(--sec-text);
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .password-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--field-stroke);
+
+        &.error {
+          border-bottom: 1px solid var(--error);
+        }
+        .contact-password {
+          border: none;
+
+          padding: 12px 20px;
+          max-width: 560px;
+          font-family: var(--font-family);
+          font-weight: 400;
+          @include adaptiv-font(24, 20);
+          line-height: 1.5;
+          letter-spacing: 0.04em;
+          width: 100%;
+
+          color: var(--main-text);
+
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            font-family: var(--font-family);
+            font-weight: 400;
+            @include adaptiv-font(24, 20);
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+
+            color: var(--sec-text);
+          }
+        }
+
+        .show-password {
+          cursor: pointer;
+          .eye-icon-opened {
+            display: none;
+          }
+          .eye-icon-closed {
+            display: flex;
+          }
+        }
+        .show-password.active {
+          .eye-icon-closed {
+            display: none;
+          }
+          .eye-icon-opened {
+            display: flex;
+          }
+        }
+      }
+      .city-block {
+        position: relative;
+
+        &::after {
+          content: "";
+          pointer-events: none;
+          display: block;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          right: 0px;
+          transform: translateY(-50%) rotate(0deg);
+          background-image: url("../icons/Frame.svg");
+          background-position: center;
+          background-size: contain;
+          transition: all 0.3s ease-in-out;
+        }
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          text-indent: 1px;
+          font-family: var(--font-family);
+          font-weight: 400;
+          @include adaptiv-font(24, 20);
+          line-height: 1.5;
+          letter-spacing: 0.04em;
+          color: var(--sec-text);
+          position: relative;
+          width: 100%;
+          &.error {
+            border-bottom: 1px solid var(--error);
+          }
+        }
+        &.active {
+          &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            background-image: url("../icons/Frame.svg");
+            background-position: center;
+            background-size: contain;
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+      }
+
+      inpu select::-ms-expand {
+        display: none;
+      }
+
+      .wrap {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+        }
+
+        .custom-checkbox {
+          position: relative;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+          label {
+            position: relative;
+            display: inline-block;
+            padding-left: 30px;
+            line-height: 1.5;
+            cursor: pointer;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-55%);
+              width: 30px;
+              height: 30px;
+              background-image: url("../icons/checkbox-off.svg");
+              background-position: center;
+              background-size: cover;
+            }
+          }
+        }
+        .custom-checkbox input:checked + label:before {
+          background-image: url("../icons/checkbox-on.svg");
+        }
+
+        label {
+          font-family: var(--font-family);
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 1.5;
+          letter-spacing: 0.04em;
+          color: var(--sec-text);
+          a {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: var(--field-stroke);
+          }
+        }
+        button {
+          font-family: var(--second-family);
+          font-weight: 600;
+          @include adaptiv-font(28, 20);
+          line-height: 1.1;
+          text-align: center;
+          color: var(--main-text);
+          margin-left: auto;
+          border: none;
+          background-color: transparent;
+          border-bottom: 2px solid var(--blue);
+          cursor: pointer;
+          @media screen and (max-width: 768px) {
+            margin-left: 0;
+            margin: 0 auto;
+          }
+        }
+      }
+      input {
+        &.error {
+          border-bottom: 1px solid var(--error);
+        }
+      }
+    }
+  }
+}

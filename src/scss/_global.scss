@@ -1,0 +1,90 @@
+@import "fonts";
+
+:root {
+  --sec-text: #8b96ac;
+  --error: #ba5b5b;
+  --main-text: #2a3b53;
+  --field-stroke: #5b6c8c;
+  --background: #f7f9fd;
+  --blue: #5879ef;
+  --head-color: #3e5679;
+
+  --font-family: "Hind", sans-serif;
+  --second-family: "Overpass", sans-serif;
+}
+
+[class*="-container"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hind";
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
