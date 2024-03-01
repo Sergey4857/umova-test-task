@@ -107,12 +107,12 @@ function my_action_callback()
 		$mail_to = "yasak.sergey@gmail.com";
 
 		//Сбор данных с формы
-		$name = trim($_POST["name"]);
-		$email = trim($_POST["email"]);
-		$number = trim($_POST["number"]);
-		$password = trim($_POST["password"]);
-		$city = trim($_POST["city"]);
-		$privacy = trim($_POST["privacy"]);
+		$name = sanitize_text_field($_POST["name"]);
+		$email = sanitize_text_field($_POST["email"]);
+		$number = sanitize_text_field($_POST["number"]);
+		$password = sanitize_text_field($_POST["password"]);
+		$city = sanitize_text_field($_POST["city"]);
+		$privacy = sanitize_text_field($_POST["privacy"]);
 
 		//Проверка на пустые поля
 		if (empty($name) || empty($email) || empty($number) || empty($password) || empty($city) || empty($privacy)) {

@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
   $(".show-password").click(function () {
-
     //Скрытие и показ пароля
     const passwordInput = $(".contact-password");
     $(this).toggleClass("active");
@@ -22,7 +21,7 @@ jQuery(document).ready(function ($) {
     $(".city-block").removeClass("active");
   });
 
-    //Сабмит формы
+  //Сабмит формы
   $(".contact-form").submit(function (e) {
     e.preventDefault();
     if (validateForm()) {
@@ -33,6 +32,7 @@ jQuery(document).ready(function ($) {
         url: $(this).attr("action"),
         data: form_data,
         success: function (response) {
+          $(".contact-form")[0].reset();
           console.log(response);
         },
         error: function (error) {
