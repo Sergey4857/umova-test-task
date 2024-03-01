@@ -21,8 +21,8 @@ get_header();
             <div class="password-block">
                 <input type="password" name="password" placeholder="Password *" class="contact-password">
                 <div class="show-password">
-                    <img class="eye-icon-closed" src=<?php echo get_template_directory_uri() . "./src/icons/eye-closed.svg" ?> alt="Show Password" />
-                    <img class="eye-icon-opened" src=<?php echo get_template_directory_uri() . "./src/icons/eye-opened.svg" ?> alt="Show Password" />
+                    <img class="eye-icon-closed" src=<?php echo get_template_directory_uri() . "/src/icons/eye-closed.svg" ?> alt="Show Password" />
+                    <img class="eye-icon-opened" src=<?php echo get_template_directory_uri() . "/src/icons/eye-opened.svg" ?> alt="Show Password" />
                 </div>
 
             </div>
