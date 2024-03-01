@@ -12,13 +12,27 @@ jQuery(document).ready(function ($) {
   });
 
   //Стрелка select, открытие и закрытие
-  $(".city-block").click(function (event) {
+
+  $(document).on("click", function (event) {
+    // Закрываем все открытые селекты при клике вне селекта
+    if (!$(event.target).closest(".city-block").length) {
+      $(".city-block.active").removeClass("active");
+    }
+  });
+
+  $(".city-block").on("click", function (event) {
+    $(".city-block.active").not(this).removeClass("active");
     $(this).toggleClass("active");
     event.stopPropagation();
   });
 
-  $(".city").focusout(function () {
-    $(".city-block").removeClass("active");
+  $(".city").on("change", function () {
+    $(".city-block.active").removeClass("active");
+  });
+
+  // Закрытие селекта при потере фокуса
+  $(".city").on("blur", function () {
+    $(".city-block.active").removeClass("active");
   });
 
   //Сабмит формы
